@@ -1,6 +1,7 @@
 #!/usr/bin/env python3
 
-import math
+import math, sys
+sys.path.append("../..")
 from dataclasses import dataclass
 from typing import Optional, Tuple
 
@@ -18,15 +19,15 @@ from aido_schemas import (
     RGB,
 )
 
-from solution.connections import get_motor_left_matrix, get_motor_right_matrix
-from solution.preprocessing import preprocess
+from packages.solution.connections import get_motor_left_matrix, get_motor_right_matrix
+from packages.solution.preprocessing import preprocess
 
 
 # TODO edit this Config class ! Play with different gain and const values
 @dataclass
 class BraitenbergAgentConfig:
-    gain: float = 0.9
-    const: float = 0.0
+    gain: float = 0.3
+    const: float = 0.4
 
 
 class BraitenbergAgent:
