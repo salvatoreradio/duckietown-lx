@@ -113,8 +113,8 @@ def check_collision_shape(a: PlacedPrimitive, b: PlacedPrimitive) -> bool:
         robot_center = (robot_pose.x, robot_pose.y)
         
         theta = np.radians(robot_pose.theta_deg)
-        dx = env_center.x - robot_center.x
-        dy = env_center.y - robot_center.y
+        dx = env_center[0] - robot_center[0]
+        dy = env_center[1] - robot_center[1]
         
         x_local = dx * np.cos(theta) - dy * np.sin(theta)
         y_local = dx * np.sin(theta) + dy * np.cos(theta)
